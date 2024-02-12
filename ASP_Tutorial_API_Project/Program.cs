@@ -1,5 +1,6 @@
 
 using ASP_Tutorial_API_Project.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 
 namespace ASP_Tutorial_API_Project
@@ -34,7 +35,7 @@ namespace ASP_Tutorial_API_Project
 
 
             app.MapControllers();
-
+            app.UseCors(options => options.AllowAnyOrigin());//this is for angularAPI
             app.Run();
         }
     }
